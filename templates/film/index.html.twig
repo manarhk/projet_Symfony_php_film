@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FilmController!{% endblock %}
+
+{% block body %}
+
+<section class="films">
+
+    {% for film in films %}
+    <film>
+        <p> <br/> </p>
+        <h2>{{ film.nom }}</h2>
+
+        <div class="content">
+           <!-- <img src="http://placehold.it/150x70" alt="">-->
+            <p> <strong> La description:</strong>   {{ film.description }}</p>
+            <p><strong> Score:</strong>  {{ film.score  }}</p>
+            <p><strong>  Nombre de votans:</strong>   {{ film.numvoters }}</p>
+
+
+            <a href="{{ path('film_show', {'id': film.id}) }}" class="btn btn-primary">Voir plus </a>
+            <p> <br/> </p>
+        </div>
+
+    </film>
+    {% endfor %}
+
+
+</section>
+
+{% endblock%}

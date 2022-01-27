@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<film>
+    <p> <br/> </p>
+    <p> <br/> </p>
+
+    <h1>{{ film.id }}.{{ film.nom }}</h1>
+   <p> </br></p>
+    <div class="content">
+      <!--  <img src="http://placehold.it/250x100" alt="">-->
+        <p><strong> La description</strong>{{ film.description }}</p>
+        <div class="metadata">
+            <p><strong> Score:</strong>  {{ film.score  }}</p>
+            <p><strong>  Nombre de votans:</strong>   {{ film.numvoters }}</p>
+        </div>
+
+
+    </div>
+</film>
+
+{% endblock %}

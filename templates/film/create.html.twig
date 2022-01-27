@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% form_theme formFilm 'bootstrap_4_layout.html.twig' %}
+
+{% block title %} Ajouter un film {% endblock %}
+{% block body %}
+
+<h1 style=""> Ajouter un film </h1>
+
+
+<p> <br/> </p>
+<p> <br/> </p>
+
+
+{{ form_start(formFilm) }}
+
+{{form_row(formFilm.nom,{'attr': {'placeholder': "Nom de film"}}) }}
+<p> <br/> </p>
+
+{{form_row(formFilm.score,{'attr': {'placeholder': "le score"}}) }}
+<p> <br/> </p>
+
+{{form_row(formFilm.numvoters, {'attr': {'placeholder': "Nombre de votant"}}) }}
+
+{{form_row(formFilm.email,{'attr': {'placeholder': "email"}}) }}
+
+
+<p> <br/> </p>
+
+<button type="submit"  class="btn btn-success" style="background: #eb6864;">>
+    {% if updateMode %}
+         Enregistrer
+    {% else %}
+         Ajouter
+    {% endif %}
+    </button>
+
+{{ form_end(formFilm) }}
+
+
+{% endblock %}
